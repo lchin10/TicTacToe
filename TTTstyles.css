@@ -1,0 +1,173 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root{
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size)* .9);
+}
+
+body{
+    margin: 0;
+    background-color: #e4e4dcdc;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+header {
+    text-align: center;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3,auto);
+}
+
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){ border-top: none; }
+
+.cell:nth-child(3n+1){ border-left: none; }
+
+.cell:nth-child(3n+3){ border-right: none; }
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){ border-bottom: none; }
+
+.cell.x,
+.cell.o{
+    cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after {
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size)* .15);
+    height: var(--mark-size);
+    background-color: black;
+}
+
+.cell.x::before{ transform: rotate(45deg);}
+
+.cell.x::after{ transform: rotate(-45deg);}
+
+.cell.o::before,
+.cell.o::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.cell.o::before{
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: black;
+}
+
+.cell.o::after{
+    width: calc(var(--mark-size)* .7);
+    height: calc(var(--mark-size)* .7);
+    background-color: white;
+
+}
+
+.winning-message{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 700px;
+    font-size: 40px;
+    color: black;
+}
+
+.winning-message button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.winning-message.show{
+    display: flex;
+}
+
+.figure {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width:65%;
+}
+.figure img.title-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .15s;
+}
+  .figure:hover img.title-hover {
+    opacity: 1;
+}
+  .header-link
+  {
+    padding: 40px;
+    width: 100%;
+    margin: auto;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+  }
+
+
+.versus button{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    background: none;
+    box-shadow: 5px 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.works:hover{ color: gray; }
+.works:focus{ color: gray; }
+
+.transbox{
+    visibility: hidden;
+    z-index: 10;
+    position: absolute;
+    height: 700px;
+    width: 8500px;
+    margin: 30px;
+    background-color: #ffffff;
+    opacity: 0;
+}

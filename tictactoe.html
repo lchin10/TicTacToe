@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html lang="en">
+<link rel="stylesheet" href="TTTstyles.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe - Gizzard Games</title>
+    <script src="TTTscript.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="figure">
+            <a href = "../index.html"><img class="title-main" src="../pictures/titleUnhovered.png"></a>
+            <a href = "../index.html"><img class="title-hover" src="../pictures/titleHovered.png"></a>
+        </div>
+        <p class="header">
+            <a href="" class="header-link" style="text-decoration: none; color: black; margin-left:1em; margin-right: 1em">Checkers</a>
+      
+            <a href="" class="header-link" style="text-decoration: none; color: black; margin-left:1em; margin-right: 1em">Minesweeper</a>
+      
+            <a href="" class="header-link" style="text-decoration: none; color: black; margin-left:1em; margin-right: 1em">Sudoku</a>
+      
+            <a href="" class="header-link" style="text-decoration: none; color: black; margin-left:1em; margin-right: 1em">Tic-Tac-Toe</a>
+
+            <a href="" class="header-link" style="text-decoration: none; color: black; margin-left:1em; margin-right: 1em">Snake</a>
+      
+            <a href="" class="header-link" style="text-decoration: none; color: black; margin-left:1em; margin-right: 1em">Your Scores</a>
+        </p>
+        <hr class = "maindiv">
+        <div class="transbox" id="transbox"></div>
+        <div class="versus" style="text-align: center">
+            <button class="works" id="hvh">Human vs Human</button>
+            <button class="works" id="hvc">Human vs Computer</button>
+            <button class="works" id="hva">Human vs AI</button>
+            <button class="works" id="cvc">Computer vs Computer</button>
+        </div>
+    <div class="winning-message" id="winningMessage">
+        <div data-winning-message-text ></div>
+    </div>
+    <div class="board" id="board">
+        <div class="cell" id="0" data-cell></div>
+        <div class="cell" id="1" data-cell></div>
+        <div class="cell" id="2" data-cell></div>
+        <div class="cell" id="3" data-cell></div>
+        <div class="cell" id="4" data-cell></div>
+        <div class="cell" id="5" data-cell></div>
+        <div class="cell" id="6" data-cell></div>
+        <div class="cell" id="7" data-cell></div>
+        <div class="cell" id="8" data-cell></div>
+    </div>
+</body>
+
+</html>
